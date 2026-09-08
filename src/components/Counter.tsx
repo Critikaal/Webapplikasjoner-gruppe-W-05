@@ -29,7 +29,7 @@ export function Counter() {
       >
         Trykk her
       </button>
-      <span>Trykket {count} ganger</span>
+      <span>Trykket {count} ganger. {count/3} hvis du deler det på 3</span>
     </div>
   );
 }
