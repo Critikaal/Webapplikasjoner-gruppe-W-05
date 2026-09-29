@@ -1,5 +1,6 @@
 import { Counter } from "@/components/Counter";
 import { TimeClient } from "@/components/TimeClient";
+import { ContentCard } from "@/components/ContentCard";
 
 /**
  * En server-komponent. Den kjører på serveren, én gang per forespørsel, og
@@ -28,6 +29,12 @@ export function Home() {
       <TimeClient />
 
       <Counter />
+        <div>
+          <ContentCard />
+
+      <ContentCard />
+        </div>
+      
 
       <h2 className="mt-10 text-xl font-semibold">Prøv dette</h2>
       <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-700">
