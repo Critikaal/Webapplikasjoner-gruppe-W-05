@@ -5,7 +5,7 @@ export function ContentCard() {
     <section>
       <img src="src\components\test.webp" alt="image" />
       
-      <h2>The long lived king</h2>
+      <h2>The Long Lived King</h2>
       <p>Rating:</p>
       <p>4.7/5</p>
     </section>
