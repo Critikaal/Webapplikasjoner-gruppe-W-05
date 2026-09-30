@@ -31,8 +31,10 @@ export function Home() {
       <Counter />
         <div>
           <ContentCard />
-
-      <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
+          <ContentCard />
         </div>
       
 
