@@ -1,6 +1,8 @@
 import { Counter } from "@/components/Counter";
 import { TimeClient } from "@/components/TimeClient";
 import { ContentCard } from "@/components/ContentCard";
+import { searchBooks } from "@/lib/books";
+import { env } from "cloudflare:workers"
 
 /**
  * En server-komponent. Den kjører på serveren, én gang per forespørsel, og
@@ -10,7 +12,8 @@ import { ContentCard } from "@/components/ContentCard";
  * Server-komponent er standarden i RedwoodSDK. Trenger du klikk eller state,
  * lager du en klient-komponent, som `TimeClient` og `Counter` under.
  */
-export function Home() {
+export async function Home() {
+  const books = await searchBooks("The lord of the rings", env.GOOGLE_BOOKS_KEY);
   const now = new Date().toLocaleString("no-NO");
 
   return (
@@ -29,13 +32,9 @@ export function Home() {
       <TimeClient />
 
       <Counter />
-        <div>
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-        </div>
+        <div className="card-grid">
+    {books.map((b) => <ContentCard key={b.id} book={b} />)}
+  </div>
       
 
       <h2 className="mt-10 text-xl font-semibold">Prøv dette</h2>
