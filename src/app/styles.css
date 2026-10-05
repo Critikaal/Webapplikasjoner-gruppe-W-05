@@ -1,35 +1,32 @@
 /* src/app/styles.css */
 @import "tailwindcss";
 
-div{
-@apply flex flex-row space-y-4 space-x-4;
-@apply gap-4;
-@apply flex-wrap;
-@apply justify-center items-center;
+form{
+  @apply mb-4 flex flex-row  gap-2;
+  input[type="search"] {
+    @apply border rounded-lg p-2;
+  }
+  button {
+    @apply bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600;
+  }
+}
+.card-grid {
+  @apply flex flex-row flex-wrap justify-center items-center gap-4 pt-4;
 
   section {
-  @apply border rounded-lg shadow-md;
-  @apply bg-white;
-  @apply max-w-3xs mx-auto;
-  @apply text-center;
-  @apply hover:shadow-lg;
-  @apply transition-shadow duration-300;
-  @apply hover:scale-102;
-  @apply transform;
-  @apply cursor-pointer;
-  @apply hover:bg-gray-100;
-  @apply will-change-transform;
-  @apply m-0;
-  h2 {
-    @apply text-lg font-bold;
-  }
-  p {
-    @apply text-sm text-gray-600;
-  }
-  img {
-    @apply rounded-lg;
-    @apply border rounded-lg;
-  }
-}
-}
+    @apply border rounded-lg shadow-md bg-white max-w-3xs mx-auto text-center;
+    @apply hover:shadow-lg hover:scale-102 hover:bg-gray-100;
+    @apply transition-shadow duration-300 transform cursor-pointer will-change-transform;
+    @apply m-0 w-1/4 h-64;
 
+    h2 {
+      @apply  font-bold mb-2 ml-2 mr-2;
+    }
+    p {
+      @apply text-sm text-gray-600 mb-2 truncate ml-2 mr-2;
+    }
+    img {
+      @apply rounded-lg w-full h-2/3;
+    }
+  }
+}
