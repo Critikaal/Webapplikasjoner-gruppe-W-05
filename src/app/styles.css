@@ -1,6 +1,15 @@
 /* src/app/styles.css */
 @import "tailwindcss";
 
+form{
+  @apply mb-4 flex flex-row  gap-2;
+  input[type="search"] {
+    @apply border rounded-lg p-2;
+  }
+  button {
+    @apply bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600;
+  }
+}
 .card-grid {
   @apply flex flex-row flex-wrap justify-center items-center gap-4 pt-4;
 

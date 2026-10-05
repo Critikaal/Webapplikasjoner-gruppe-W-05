@@ -12,9 +12,11 @@ import { env } from "cloudflare:workers"
  * Server-komponent er standarden i RedwoodSDK. Trenger du klikk eller state,
  * lager du en klient-komponent, som `TimeClient` og `Counter` under.
  */
-export async function Home() {
-  const books = await searchBooks("The lord of the rings", env.GOOGLE_BOOKS_KEY);
+export async function Home({request}: {request: Request}) {
+   const q = new URL(request.url).searchParams.get("q") ?? "";
+  const books = await searchBooks(q || "The lord of the rings", env.GOOGLE_BOOKS_KEY);
   const now = new Date().toLocaleString("no-NO");
+ 
 
   return (
     <main className="mx-auto max-w-2xl p-8 font-sans">
@@ -32,6 +34,10 @@ export async function Home() {
       <TimeClient />
 
       <Counter />
+      <form method="get">
+  <input type="search" name="q" defaultValue={q} placeholder="Søk etter bøker" />
+  <button type="submit">Søk</button>
+</form>
         <div className="card-grid">
     {books.map((b) => <ContentCard key={b.id} book={b} />)}
   </div>
