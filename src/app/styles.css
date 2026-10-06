@@ -1,13 +1,15 @@
 /* src/app/styles.css */
 @import "tailwindcss";
 
+
 form{
-  @apply mb-4 flex flex-row  gap-2;
+  @apply mb-4 mt-4 flex flex-row  gap-4;
   input[type="search"] {
-    @apply border rounded-lg p-2;
+    @apply border rounded-lg p-2 w-1/2;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500;
   }
   button {
-    @apply bg-blue-500 text-white rounded-lg p-2 hover:bg-blue-600;
+    @apply bg-blue-500 text-white rounded-lg p-2 pl-4 pr-4 hover:bg-blue-700;
   }
 }
 .card-grid {
@@ -17,13 +19,14 @@ form{
     @apply border rounded-lg shadow-md bg-white max-w-3xs mx-auto text-center;
     @apply hover:shadow-lg hover:scale-102 hover:bg-gray-100;
     @apply transition-shadow duration-300 transform cursor-pointer will-change-transform;
-    @apply m-0 w-1/4 h-64;
+    @apply m-0 w-5/16 h-80;
 
     h2 {
-      @apply  font-bold mb-2 ml-2 mr-2;
+      @apply  font-bold m-2;
     }
     p {
-      @apply text-sm text-gray-600 mb-2 truncate ml-2 mr-2;
+      @apply text-sm text-gray-600 m-2 truncate;
+      text-transform: capitalize;
     }
     img {
       @apply rounded-lg w-full h-2/3;
